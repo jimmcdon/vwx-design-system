@@ -5,6 +5,7 @@
 ### Prerequisites
 
 1. **Node.js 20.x or higher** (currently system has v18.20.4)
+
    ```bash
    # Using nvm (recommended)
    nvm install 20
@@ -14,6 +15,7 @@
    ```
 
 2. **pnpm 8.x or higher**
+
    ```bash
    # Enable corepack (comes with Node.js 16.10+)
    corepack enable
@@ -30,12 +32,14 @@
 Once Node.js 20+ and pnpm are installed:
 
 1. **Install dependencies**
+
    ```bash
    cd /Users/mcdpro/vwx/vwx-design-system
    pnpm install
    ```
 
 2. **Build design tokens**
+
    ```bash
    pnpm build:tokens
    ```
@@ -43,6 +47,7 @@ Once Node.js 20+ and pnpm are installed:
    This will generate CSS custom properties in `packages/tokens/dist/css/`
 
 3. **Verify the build**
+
    ```bash
    # Check that tokens were generated
    ls -la packages/tokens/dist/css/
@@ -56,6 +61,7 @@ Once Node.js 20+ and pnpm are installed:
    ```
 
 4. **Start Storybook**
+
    ```bash
    pnpm storybook
    ```
@@ -97,11 +103,13 @@ node --version  # Should show v20.x.x
 If `pnpm install` fails:
 
 1. Clear pnpm cache:
+
    ```bash
    pnpm store prune
    ```
 
 2. Delete `node_modules` and lockfile:
+
    ```bash
    rm -rf node_modules pnpm-lock.yaml
    ```
@@ -122,6 +130,7 @@ After successful local setup:
    - Do NOT initialize with README (we have one)
 
 2. **Push to GitHub**
+
    ```bash
    cd /Users/mcdpro/vwx/vwx-design-system
 
@@ -199,16 +208,16 @@ pnpm format
 
 ## Common Commands Reference
 
-| Command | Description |
-|---------|-------------|
-| `pnpm install` | Install all dependencies |
-| `pnpm build` | Build all packages |
-| `pnpm build:tokens` | Build design tokens only |
-| `pnpm storybook` | Start Storybook dev server |
-| `pnpm test` | Run all tests |
-| `pnpm lint` | Lint code |
-| `pnpm format` | Format code |
-| `pnpm typecheck` | Type check TypeScript |
+| Command             | Description                |
+| ------------------- | -------------------------- |
+| `pnpm install`      | Install all dependencies   |
+| `pnpm build`        | Build all packages         |
+| `pnpm build:tokens` | Build design tokens only   |
+| `pnpm storybook`    | Start Storybook dev server |
+| `pnpm test`         | Run all tests              |
+| `pnpm lint`         | Lint code                  |
+| `pnpm format`       | Format code                |
+| `pnpm typecheck`    | Type check TypeScript      |
 
 ## Support
 

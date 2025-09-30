@@ -1,9 +1,15 @@
 {
   "typography": {
     "fontFamily": {
-      "sans": { "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" },
-      "mono": { "value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" },
-      "display": { "value": "'VW Head', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }
+      "sans": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace"
+      },
+      "display": {
+        "value": "'VW Head', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      }
     },
     "fontSize": {
       "xs": { "value": "0.75rem" },

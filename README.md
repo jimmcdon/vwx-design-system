@@ -1,13 +1,18 @@
 # VW Xperience Design System
 
-> Automotive-inspired design system with AI integration built on Web Components (Lit)
+> Automotive-inspired design system with AI integration built on Web Components
+> (Lit)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## Overview
 
-The VW Xperience Design System is a comprehensive collection of reusable components, design tokens, and guidelines for building automotive-inspired digital experiences. Built with modern web standards and technologies, it provides a solid foundation for creating consistent, accessible, and performant user interfaces.
+The VW Xperience Design System is a comprehensive collection of reusable
+components, design tokens, and guidelines for building automotive-inspired
+digital experiences. Built with modern web standards and technologies, it
+provides a solid foundation for creating consistent, accessible, and performant
+user interfaces.
 
 ### Key Features
 
@@ -45,22 +50,26 @@ vwx-design-system/
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd vwx-design-system
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Build design tokens:
+
 ```bash
 pnpm build:tokens
 ```
 
 4. Start Storybook:
+
 ```bash
 pnpm storybook
 ```
@@ -71,29 +80,31 @@ Storybook will open at `http://localhost:6006`
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server for components |
-| `pnpm build` | Build all packages |
-| `pnpm build:tokens` | Build design tokens only |
-| `pnpm build:components` | Build components only |
-| `pnpm build:storybook` | Build Storybook for production |
-| `pnpm storybook` | Start Storybook development server |
-| `pnpm test` | Run all tests |
-| `pnpm test:unit` | Run unit tests |
-| `pnpm test:e2e` | Run E2E tests |
-| `pnpm lint` | Lint all files |
-| `pnpm format` | Format all files with Prettier |
-| `pnpm typecheck` | Run TypeScript type checking |
+| Command                 | Description                             |
+| ----------------------- | --------------------------------------- |
+| `pnpm dev`              | Start development server for components |
+| `pnpm build`            | Build all packages                      |
+| `pnpm build:tokens`     | Build design tokens only                |
+| `pnpm build:components` | Build components only                   |
+| `pnpm build:storybook`  | Build Storybook for production          |
+| `pnpm storybook`        | Start Storybook development server      |
+| `pnpm test`             | Run all tests                           |
+| `pnpm test:unit`        | Run unit tests                          |
+| `pnpm test:e2e`         | Run E2E tests                           |
+| `pnpm lint`             | Lint all files                          |
+| `pnpm format`           | Format all files with Prettier          |
+| `pnpm typecheck`        | Run TypeScript type checking            |
 
 ### Building for Production
 
 Build all packages:
+
 ```bash
 pnpm build
 ```
 
 Build Storybook for deployment:
+
 ```bash
 pnpm build:storybook
 ```
@@ -113,13 +124,19 @@ npm install @vwx/components @vwx/tokens @vwx/themes
 ```html
 <!DOCTYPE html>
 <html data-theme="bw">
-<head>
-  <link rel="stylesheet" href="node_modules/@vwx/tokens/dist/css/variables.css">
-  <script type="module" src="node_modules/@vwx/components/dist/index.js"></script>
-</head>
-<body>
-  <!-- Your components here -->
-</body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="node_modules/@vwx/tokens/dist/css/variables.css"
+    />
+    <script
+      type="module"
+      src="node_modules/@vwx/components/dist/index.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Your components here -->
+  </body>
 </html>
 ```
 
@@ -137,6 +154,7 @@ applyTheme('patina');
 ```
 
 Available themes:
+
 - `bw` - Black & White (minimalist monochrome)
 - `color` - VW brand colors (blue accents)
 - `patina` - Aged aesthetic (rust and bronze tones)
@@ -181,23 +199,27 @@ import { classNames, debounce, throttle } from '@vwx/utils';
 ## Testing
 
 Run all tests:
+
 ```bash
 pnpm test
 ```
 
 Run unit tests with Vitest:
+
 ```bash
 pnpm test:unit
 ```
 
 Run E2E tests with Playwright:
+
 ```bash
 pnpm test:e2e
 ```
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md)
+for details.
 
 ### Development Workflow
 
@@ -211,7 +233,8 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 The project includes three GitHub Actions workflows:
 
 - **CI/CD Pipeline** (`ci.yml`): Runs on all pushes and PRs
-- **Deploy Storybook** (`deploy-storybook.yml`): Deploys to GitHub Pages on main branch
+- **Deploy Storybook** (`deploy-storybook.yml`): Deploys to GitHub Pages on main
+  branch
 - **Quality Gates** (`quality-gates.yml`): Additional quality checks for PRs
 
 ## Architecture Decisions
@@ -226,22 +249,26 @@ The project includes three GitHub Actions workflows:
 ## Roadmap
 
 ### Phase 1 (Week 1-3) - ✅ Complete
+
 - [x] Repository setup
 - [x] Design token system
 - [x] Storybook configuration
 - [x] CI/CD pipelines
 
 ### Phase 2 (Week 4-6) - In Progress
+
 - [ ] Core components (Button, Input, Card, etc.)
 - [ ] Component testing
 - [ ] Accessibility audits
 
 ### Phase 3 (Week 7-9) - Planned
+
 - [ ] Advanced components
 - [ ] AI integration hooks
 - [ ] Performance optimization
 
 ### Phase 4 (Week 10-12) - Planned
+
 - [ ] Documentation enhancements
 - [ ] NPM publishing
 - [ ] Example applications

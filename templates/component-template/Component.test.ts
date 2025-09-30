@@ -30,14 +30,12 @@ describe('vwx-component-name', () => {
     });
 
     it('renders icon slot', async () => {
-      const el = await fixture<VwxComponentName>(
-        html`
-          <vwx-component-name>
-            <span slot="icon">🚗</span>
-            Content
-          </vwx-component-name>
-        `
-      );
+      const el = await fixture<VwxComponentName>(html`
+        <vwx-component-name>
+          <span slot="icon">🚗</span>
+          Content
+        </vwx-component-name>
+      `);
 
       const iconSlot = el.shadowRoot?.querySelector('slot[name="icon"]');
       expect(iconSlot).to.exist;
@@ -216,9 +214,7 @@ describe('vwx-component-name', () => {
 
   describe('Edge Cases', () => {
     it('handles empty content', async () => {
-      const el = await fixture<VwxComponentName>(
-        html`<vwx-component-name></vwx-component-name>`
-      );
+      const el = await fixture<VwxComponentName>(html`<vwx-component-name></vwx-component-name>`);
 
       expect(el).to.exist;
     });

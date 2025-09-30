@@ -50,7 +50,8 @@ Complete guide for developing the VW Xperience Design System.
 
 3. **Install VS Code Extensions**
 
-   Open the project in VS Code and install recommended extensions when prompted, or run:
+   Open the project in VS Code and install recommended extensions when prompted,
+   or run:
 
    ```bash
    code --install-extension dbaeumer.vscode-eslint
@@ -106,7 +107,6 @@ Storybook will be available at: `http://localhost:6006`
    ```
 
 3. **Develop Component**
-
    - Create component in appropriate package
    - Write unit tests
    - Create Storybook stories
@@ -115,6 +115,10 @@ Storybook will be available at: `http://localhost:6006`
 4. **Run Quality Checks**
 
    ```bash
+   # Quick quality check (recommended for daily development)
+   pnpm workflow:quick
+
+   # OR run individual checks
    pnpm lint       # Lint code
    pnpm typecheck  # Check types
    pnpm test       # Run tests
@@ -128,7 +132,8 @@ Storybook will be available at: `http://localhost:6006`
    git commit -m "feat(component): add new component"
    ```
 
-   Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/).
+   Commit messages must follow
+   [Conventional Commits](https://www.conventionalcommits.org/).
 
 6. **Push and Create PR**
 
@@ -198,6 +203,25 @@ pnpm build:components # Build components package
 # Testing
 pnpm test             # Run all unit tests
 pnpm test:watch       # Run tests in watch mode
+pnpm test:e2e         # Run E2E tests
+pnpm test:coverage    # Run tests with coverage
+
+# Quality & Analysis
+pnpm lint             # Lint code
+pnpm lint:fix         # Fix lint issues
+pnpm format           # Format code
+pnpm format:check     # Check formatting
+pnpm typecheck        # Check TypeScript types
+pnpm analyze:bundle   # Analyze bundle sizes
+pnpm analyze:performance # Run performance tests
+
+# Workflow Automation (Recommended)
+pnpm workflow         # Show available workflows
+pnpm workflow:quick   # Quick quality checks
+pnpm workflow:full    # Comprehensive checks
+pnpm workflow:setup   # Setup dev environment
+pnpm workflow:clean   # Clean and reinstall
+pnpm workflow:release # Prepare for release
 pnpm test:coverage    # Run tests with coverage
 pnpm test:e2e         # Run E2E tests
 

@@ -188,10 +188,7 @@ test.describe('Focus Management', () => {
     });
 
     // Should have a visible outline or box-shadow for focus
-    expect(
-      outlineStyle.outline !== 'none' ||
-      parseInt(outlineStyle.outlineWidth) > 0
-    ).toBe(true);
+    expect(outlineStyle.outline !== 'none' || parseInt(outlineStyle.outlineWidth) > 0).toBe(true);
   });
 
   test('should restore focus after modal closes', async ({ page }) => {

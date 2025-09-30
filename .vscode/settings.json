@@ -26,5 +26,57 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  
+  // Design System specific settings
+  "emmet.includeLanguages": {
+    "typescript": "html",
+    "javascript": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  
+  // Testing
+  "vitest.enable": true,
+  "testing.automaticallyOpenPeekView": "never",
+  
+  // Git
+  "git.enableCommitSigning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  
+  // Performance
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.nyc_output": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.git": true
+  },
+  
+  // Workspace trust
+  "security.workspace.trust.untrustedFiles": "open",
+  
+  // Error lens
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.exclude": ["never (read|used)"],
+  
+  // Auto import suggestions
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  
+  // Breadcrumbs
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.symbolPath": "on",
+  
+  // Terminal
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Roboto Mono', monospace"
 }

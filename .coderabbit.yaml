@@ -1,0 +1,84 @@
+# CodeRabbit AI Configuration for VWX Design System
+# Automated PR reviews focused on design system quality
+
+reviews:
+  # Enable automatic PR reviews
+  auto_review: true
+  
+  # Focus areas for design system
+  focus_areas:
+    - accessibility
+    - performance
+    - security
+    - typescript_types
+    - web_components
+    - design_tokens
+    - testing_coverage
+    - documentation
+
+  # Custom rules for design system
+  rules:
+    - name: "Component API Consistency"
+      description: "Ensure consistent component APIs across the design system"
+      pattern: "packages/components/**/*.ts"
+      checks:
+        - exported_props_documented
+        - event_naming_convention
+        - slot_documentation
+    
+    - name: "Design Token Usage"
+      description: "Verify proper usage of design tokens"
+      pattern: "**/*.ts"
+      checks:
+        - no_hardcoded_colors
+        - no_hardcoded_spacing
+        - no_hardcoded_typography
+    
+    - name: "Accessibility Requirements"
+      description: "Ensure components meet accessibility standards"
+      pattern: "packages/components/**/*.ts"
+      checks:
+        - aria_attributes_present
+        - keyboard_navigation_support
+        - focus_management
+        - semantic_html
+
+  # Integration settings
+  integrations:
+    github:
+      check_runs: true
+      pr_comments: true
+      review_requests: true
+    
+    sonarcloud:
+      enabled: true
+      quality_gate: true
+    
+    lighthouse:
+      performance_threshold: 90
+      accessibility_threshold: 95
+      best_practices_threshold: 90
+      seo_threshold: 85
+
+  # Exclusions
+  exclude:
+    - "node_modules/**"
+    - "dist/**"
+    - "coverage/**"
+    - "**/*.config.*"
+    - ".storybook/**"
+
+# Language specific settings
+languages:
+  typescript:
+    strict_mode: true
+    prefer_interfaces: true
+    explicit_return_types: warn
+  
+  css:
+    require_design_tokens: true
+    no_magic_numbers: true
+  
+  html:
+    semantic_elements: required
+    accessibility_attributes: required

@@ -41,15 +41,37 @@ jobs:
       - name: Build components
         run: pnpm build:components
 
-      - name: Run unit tests
-        run: pnpm test:unit
+      - name: Run unit tests with coverage
+        run: pnpm test:coverage
 
-      - name: Upload coverage
+      - name: Check coverage thresholds
+        run: |
+          echo "Checking coverage thresholds..."
+          # Coverage thresholds are enforced in vitest.config.ts
+          if [ ! -f coverage/coverage-summary.json ]; then
+            echo "Coverage report not found!"
+            exit 1
+          fi
+
+      - name: Bundle size analysis
+        run: pnpm analyze:bundle
+        continue-on-error: true
+
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         if: always()
         with:
-          files: ./coverage/coverage-final.json
+          files: ./coverage/lcov.info
           flags: unittests
+          name: codecov-umbrella
+
+      - name: Upload bundle analysis
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: bundle-analysis
+          path: bundle-analysis-report.json
+          retention-days: 30
 
   build-storybook:
     name: Build Storybook

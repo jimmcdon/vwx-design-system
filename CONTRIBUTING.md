@@ -1,6 +1,7 @@
 # Contributing to VW Xperience Design System
 
-Thank you for contributing to the VW Xperience Design System! This guide will help you get started.
+Thank you for contributing to the VW Xperience Design System! This guide will
+help you get started.
 
 ## Table of Contents
 
@@ -17,7 +18,8 @@ Thank you for contributing to the VW Xperience Design System! This guide will he
 
 ### Our Pledge
 
-We are committed to providing a welcoming and inclusive environment for all contributors.
+We are committed to providing a welcoming and inclusive environment for all
+contributors.
 
 ### Expected Behavior
 
@@ -78,6 +80,7 @@ Use descriptive branch names following this pattern:
 - `chore/description` - Maintenance tasks
 
 Examples:
+
 - `feature/add-button-component`
 - `fix/color-theme-contrast`
 - `docs/update-installation-guide`
@@ -95,6 +98,7 @@ We follow the Conventional Commits specification:
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -125,6 +129,7 @@ Updated color tokens to meet WCAG AA standards
 ### Development Process
 
 1. **Create a branch** from `develop`:
+
    ```bash
    git checkout develop
    git pull upstream develop
@@ -138,6 +143,7 @@ Updated color tokens to meet WCAG AA standards
    - Update documentation as needed
 
 3. **Test your changes**:
+
    ```bash
    pnpm test
    pnpm lint
@@ -145,23 +151,27 @@ Updated color tokens to meet WCAG AA standards
    ```
 
 4. **Build to ensure no errors**:
+
    ```bash
    pnpm build
    ```
 
 5. **Commit your changes**:
+
    ```bash
    git add .
    git commit -m "feat(scope): your commit message"
    ```
 
 6. **Keep your branch up to date**:
+
    ```bash
    git fetch upstream
    git rebase upstream/develop
    ```
 
 7. **Push to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -184,21 +194,26 @@ Updated color tokens to meet WCAG AA standards
 
 ```markdown
 ## Description
+
 Brief description of the changes
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Testing
+
 Describe how you tested your changes
 
 ## Screenshots (if applicable)
+
 Add screenshots for UI changes
 
 ## Checklist
+
 - [ ] Tests pass
 - [ ] Linting passes
 - [ ] Documentation updated
@@ -236,10 +251,7 @@ export class VwxButton extends LitElement {
 
   render() {
     return html`
-      <button
-        class=${this.variant}
-        ?disabled=${this.disabled}
-      >
+      <button class=${this.variant} ?disabled=${this.disabled}>
         <slot></slot>
       </button>
     `;
@@ -250,6 +262,7 @@ export class VwxButton extends LitElement {
 ### Best Practices
 
 1. **Use Design Tokens**: Always use CSS custom properties from `@vwx/tokens`
+
    ```css
    color: var(--theme-color-text-primary);
    padding: var(--spacing-component-padding-md);
@@ -267,6 +280,7 @@ export class VwxButton extends LitElement {
    - Patina
 
 4. **Documentation**: Write clear Storybook stories
+
    ```typescript
    export default {
      title: 'Components/Button',
@@ -289,6 +303,7 @@ export class VwxButton extends LitElement {
 4. Document new tokens in Storybook
 
 Example:
+
 ```json
 {
   "spacing": {
@@ -356,9 +371,7 @@ export default meta;
 
 export const Primary: StoryObj = {
   render: (args) => html`
-    <vwx-button variant=${args.variant}>
-      Click Me
-    </vwx-button>
+    <vwx-button variant=${args.variant}> Click Me </vwx-button>
   `,
 };
 ```
@@ -386,6 +399,7 @@ Create comprehensive documentation pages for complex features.
 ### Formatting
 
 Code is automatically formatted with Prettier on commit. You can also run:
+
 ```bash
 pnpm format
 ```
@@ -399,6 +413,7 @@ pnpm format
 ## Recognition
 
 Contributors will be recognized in:
+
 - Repository contributors list
 - Release notes
 - Project documentation

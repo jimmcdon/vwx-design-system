@@ -65,11 +65,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   render: (args) => html`
-    <vwx-component-name
-      variant=${args.variant}
-      size=${args.size}
-      ?disabled=${args.disabled}
-    >
+    <vwx-component-name variant=${args.variant} size=${args.size} ?disabled=${args.disabled}>
       Default Component Content
     </vwx-component-name>
   `,
@@ -84,9 +80,7 @@ export const Primary: Story = {
     variant: 'primary',
   },
   render: (args) => html`
-    <vwx-component-name variant=${args.variant}>
-      Primary Variant
-    </vwx-component-name>
+    <vwx-component-name variant=${args.variant}> Primary Variant </vwx-component-name>
   `,
 };
 
@@ -95,9 +89,7 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
   render: (args) => html`
-    <vwx-component-name variant=${args.variant}>
-      Secondary Variant
-    </vwx-component-name>
+    <vwx-component-name variant=${args.variant}> Secondary Variant </vwx-component-name>
   `,
 };
 
@@ -124,9 +116,7 @@ export const Disabled: Story = {
     disabled: true,
   },
   render: (args) => html`
-    <vwx-component-name ?disabled=${args.disabled}>
-      Disabled Component
-    </vwx-component-name>
+    <vwx-component-name ?disabled=${args.disabled}> Disabled Component </vwx-component-name>
   `,
 };
 
@@ -202,7 +192,8 @@ export const Accessibility: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'This component is fully accessible with keyboard navigation and screen reader support.',
+        story:
+          'This component is fully accessible with keyboard navigation and screen reader support.',
       },
     },
   },

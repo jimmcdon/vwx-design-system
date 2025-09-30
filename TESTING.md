@@ -17,7 +17,8 @@ Comprehensive guide to testing in the VW Xperience Design System.
 
 Our testing approach follows these principles:
 
-1. **Test Behavior, Not Implementation**: Focus on what components do, not how they do it
+1. **Test Behavior, Not Implementation**: Focus on what components do, not how
+   they do it
 2. **Write Tests Users Would Care About**: Test from the user's perspective
 3. **Accessibility First**: Every component must pass WCAG 2.1 AA standards
 4. **Fail Fast**: Catch issues early in development
@@ -370,7 +371,8 @@ test('button visual regression', async ({ page }) => {
 
 ### Advanced: Chromatic
 
-See [Visual Regression Setup Guide](./docs/visual-regression-setup.md) for Chromatic integration.
+See [Visual Regression Setup Guide](./docs/visual-regression-setup.md) for
+Chromatic integration.
 
 ## Performance Testing
 
@@ -448,7 +450,9 @@ Maximum bundle sizes:
    });
 
    test('renders with correct variant', async () => {
-     const el = await fixture(html`<vwx-button variant="primary"></vwx-button>`);
+     const el = await fixture(
+       html`<vwx-button variant="primary"></vwx-button>`
+     );
      expect(el.variant).to.equal('primary');
    });
    ```
@@ -457,7 +461,9 @@ Maximum bundle sizes:
 
    ```typescript
    test('renders correctly', async () => {
-     const el = await fixture(html`<vwx-button variant="primary">Click</vwx-button>`);
+     const el = await fixture(
+       html`<vwx-button variant="primary">Click</vwx-button>`
+     );
      expect(el.textContent).to.equal('Click');
      expect(el.variant).to.equal('primary');
      expect(el.disabled).to.be.false;

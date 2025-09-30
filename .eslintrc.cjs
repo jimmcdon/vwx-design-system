@@ -10,9 +10,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'lit', 'wc'],
+  plugins: ['@typescript-eslint', 'import'],
   env: {
     browser: true,
     es2022: true,
@@ -61,15 +63,40 @@ module.exports = {
     'prefer-template': 'warn',
     'no-duplicate-imports': 'error',
 
-    // Lit specific rules
-    'lit/no-invalid-html': 'error',
-    'lit/no-legacy-template-syntax': 'error',
-    'lit/no-property-change-update': 'error',
-    'lit/no-value-attribute': 'error',
+    // Lit and Web Components rules removed - plugins not installed
 
-    // Web Components specific
-    'wc/no-constructor-attributes': 'error',
-    'wc/no-invalid-element-name': 'error',
+    // Import/Export rules
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'type',
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+    'import/no-unresolved': 'error',
+    'import/no-cycle': 'error',
+    'import/no-self-import': 'error',
+    'import/no-useless-path-segments': 'error',
+    'import/no-deprecated': 'warn',
+
+    // Additional code quality rules
+    'complexity': ['error', 10],
+    'max-depth': ['error', 4],
+    'max-lines': ['error', 300],
+    'max-lines-per-function': ['error', 50],
+    'max-params': ['error', 4],
   },
   overrides: [
     {
@@ -98,5 +125,8 @@ module.exports = {
     '*.config.ts',
     'coverage',
     '.storybook',
+    'templates/**/*',
+    'tests/**/*',
+    'scripts/**/*',
   ],
 };

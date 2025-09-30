@@ -31,7 +31,7 @@ try {
 
 // Export theme names
 export const themes = ['bw', 'color', 'patina'] as const;
-export type Theme = typeof themes[number];
+export type Theme = (typeof themes)[number];
 
 // Utility function to apply theme
 export function applyTheme(theme: Theme): void {

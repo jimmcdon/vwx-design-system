@@ -62,11 +62,7 @@
       "@vwx/utils/*": ["./packages/utils/src/*"]
     }
   },
-  "include": [
-    "packages/*/src/**/*",
-    "packages/*/src/**/*.json",
-    "apps/**/*"
-  ],
+  "include": ["packages/*/src/**/*", "packages/*/src/**/*.json", "apps/**/*"],
   "exclude": [
     "node_modules",
     "dist",

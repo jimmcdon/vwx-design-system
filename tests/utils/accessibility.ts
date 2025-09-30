@@ -18,11 +18,11 @@ export const axeConfig = {
     'html-has-lang': { enabled: true },
     // Landmarks
     'landmark-one-main': { enabled: true },
-    'region': { enabled: true },
+    region: { enabled: true },
     // Headings
     'heading-order': { enabled: true },
     // Forms
-    'label': { enabled: true },
+    label: { enabled: true },
     'label-content-name-mismatch': { enabled: true },
     // Images
     'image-alt': { enabled: true },
@@ -33,7 +33,7 @@ export const axeConfig = {
     'aria-valid-attr-value': { enabled: true },
     // Focus
     'focus-order-semantics': { enabled: true },
-    'tabindex': { enabled: true },
+    tabindex: { enabled: true },
   },
   runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'],
 };
@@ -50,9 +50,9 @@ export const setupAccessibilityTests = () => {
  */
 export async function testKeyboardNavigation(page: Page): Promise<void> {
   // Get all interactive elements
-  const interactiveElements = await page.locator(
-    'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  ).all();
+  const interactiveElements = await page
+    .locator('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    .all();
 
   for (const element of interactiveElements) {
     // Verify element is keyboard accessible
@@ -87,8 +87,8 @@ export async function testFocusVisibility(page: Page, selector: string): Promise
   });
 
   // Check if element has visible focus indicator
-  const hasOutline = focusStyles.outline !== 'none' &&
-                     parseInt(focusStyles.outlineWidth || '0') > 0;
+  const hasOutline =
+    focusStyles.outline !== 'none' && parseInt(focusStyles.outlineWidth || '0') > 0;
   const hasBoxShadow = focusStyles.boxShadow !== 'none';
 
   return hasOutline || hasBoxShadow;
@@ -122,10 +122,7 @@ export async function checkColorContrast(
 /**
  * Test screen reader announcements
  */
-export async function testAriaLive(
-  page: Page,
-  selector: string
-): Promise<string | null> {
+export async function testAriaLive(page: Page, selector: string): Promise<string | null> {
   const element = page.locator(selector);
   return await element.getAttribute('aria-live');
 }
@@ -182,14 +179,11 @@ export async function verifyImageAltText(page: Page): Promise<boolean> {
 /**
  * Test focus trap (for modals, dialogs)
  */
-export async function testFocusTrap(
-  page: Page,
-  containerSelector: string
-): Promise<boolean> {
+export async function testFocusTrap(page: Page, containerSelector: string): Promise<boolean> {
   const container = page.locator(containerSelector);
-  const focusableElements = await container.locator(
-    'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  ).all();
+  const focusableElements = await container
+    .locator('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    .all();
 
   if (focusableElements.length === 0) {
     return true; // No focusable elements, trap not needed
@@ -203,9 +197,7 @@ export async function testFocusTrap(
   await page.keyboard.press('Tab');
 
   // Focus should move to first element
-  const isFocusTrapped = await firstElement.evaluate(
-    (el) => el === document.activeElement
-  );
+  const isFocusTrapped = await firstElement.evaluate((el) => el === document.activeElement);
 
   return isFocusTrapped;
 }

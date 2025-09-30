@@ -9,19 +9,14 @@ import type { TemplateResult } from 'lit';
 /**
  * Create a test fixture for a Lit component
  */
-export async function createFixture<T extends HTMLElement>(
-  template: TemplateResult
-): Promise<T> {
+export async function createFixture<T extends HTMLElement>(template: TemplateResult): Promise<T> {
   return fixture<T>(template);
 }
 
 /**
  * Wait for a component to be fully rendered and updated
  */
-export async function waitForComponentUpdate(
-  element: HTMLElement,
-  timeout = 1000
-): Promise<void> {
+export async function waitForComponentUpdate(element: HTMLElement, timeout = 1000): Promise<void> {
   return new Promise((resolve, reject) => {
     const timer = setTimeout(() => {
       reject(new Error('Component update timeout'));
@@ -85,11 +80,7 @@ export function getComputedStyles(element: HTMLElement): CSSStyleDeclaration {
  */
 export function isVisible(element: HTMLElement): boolean {
   const styles = getComputedStyles(element);
-  return (
-    styles.display !== 'none' &&
-    styles.visibility !== 'hidden' &&
-    styles.opacity !== '0'
-  );
+  return styles.display !== 'none' && styles.visibility !== 'hidden' && styles.opacity !== '0';
 }
 
 /**
