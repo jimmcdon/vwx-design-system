@@ -1,0 +1,24 @@
+{
+  "name": "@vwx/tokens",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./dist/css/variables.css"
+  },
+  "scripts": {
+    "build": "node build.js && tsc",
+    "dev": "node build.js --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "style-dictionary": "^3.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0"
+  }
+}

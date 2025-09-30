@@ -1,0 +1,40 @@
+{
+  "theme": {
+    "color": {
+      "color": {
+        "background": {
+          "primary": { "value": "{color.primitive.white.value}" },
+          "secondary": { "value": "{color.primitive.gray.50.value}" },
+          "tertiary": { "value": "{color.primitive.blue.50.value}" },
+          "accent": { "value": "{color.primitive.vw.blue.value}" }
+        },
+        "text": {
+          "primary": { "value": "{color.primitive.vw.blue.value}" },
+          "secondary": { "value": "{color.primitive.vw.gray.value}" },
+          "tertiary": { "value": "{color.primitive.gray.500.value}" },
+          "inverse": { "value": "{color.primitive.white.value}" },
+          "accent": { "value": "{color.primitive.vw.lightblue.value}" }
+        },
+        "border": {
+          "primary": { "value": "{color.primitive.blue.300.value}" },
+          "secondary": { "value": "{color.primitive.blue.200.value}" },
+          "focus": { "value": "{color.primitive.vw.lightblue.value}" }
+        },
+        "interactive": {
+          "primary": { "value": "{color.primitive.vw.blue.value}" },
+          "primaryHover": { "value": "{color.primitive.blue.800.value}" },
+          "primaryActive": { "value": "{color.primitive.blue.900.value}" },
+          "secondary": { "value": "{color.primitive.vw.lightblue.value}" },
+          "secondaryHover": { "value": "{color.primitive.blue.400.value}" },
+          "secondaryActive": { "value": "{color.primitive.blue.500.value}" }
+        },
+        "status": {
+          "success": { "value": "#10B981" },
+          "warning": { "value": "#F59E0B" },
+          "error": { "value": "#EF4444" },
+          "info": { "value": "{color.primitive.vw.lightblue.value}" }
+        }
+      }
+    }
+  }
+}

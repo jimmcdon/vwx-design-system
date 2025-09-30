@@ -1,0 +1,40 @@
+{
+  "theme": {
+    "patina": {
+      "color": {
+        "background": {
+          "primary": { "value": "#F5F1E8" },
+          "secondary": { "value": "{color.primitive.bronze.50.value}" },
+          "tertiary": { "value": "{color.primitive.rust.50.value}" },
+          "accent": { "value": "{color.primitive.bronze.200.value}" }
+        },
+        "text": {
+          "primary": { "value": "{color.primitive.bronze.900.value}" },
+          "secondary": { "value": "{color.primitive.rust.800.value}" },
+          "tertiary": { "value": "{color.primitive.bronze.600.value}" },
+          "inverse": { "value": "{color.primitive.bronze.50.value}" },
+          "accent": { "value": "{color.primitive.rust.600.value}" }
+        },
+        "border": {
+          "primary": { "value": "{color.primitive.bronze.300.value}" },
+          "secondary": { "value": "{color.primitive.rust.200.value}" },
+          "focus": { "value": "{color.primitive.rust.500.value}" }
+        },
+        "interactive": {
+          "primary": { "value": "{color.primitive.rust.600.value}" },
+          "primaryHover": { "value": "{color.primitive.rust.700.value}" },
+          "primaryActive": { "value": "{color.primitive.rust.800.value}" },
+          "secondary": { "value": "{color.primitive.bronze.400.value}" },
+          "secondaryHover": { "value": "{color.primitive.bronze.500.value}" },
+          "secondaryActive": { "value": "{color.primitive.bronze.600.value}" }
+        },
+        "status": {
+          "success": { "value": "{color.primitive.bronze.700.value}" },
+          "warning": { "value": "{color.primitive.rust.500.value}" },
+          "error": { "value": "{color.primitive.rust.700.value}" },
+          "info": { "value": "{color.primitive.bronze.500.value}" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@vwx/themes",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./bw": "./dist/bw/index.js",
+    "./color": "./dist/color/index.js",
+    "./patina": "./dist/patina/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@vwx/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0"
+  }
+}

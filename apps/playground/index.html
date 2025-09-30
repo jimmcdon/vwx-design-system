@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VWX Design System - Playground</title>
+    <link rel="stylesheet" href="../../packages/tokens/dist/css/variables.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: var(--typography-fontFamily-sans);
+        background: var(--theme-bw-color-background-primary);
+        color: var(--theme-bw-color-text-primary);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .theme-switcher {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: var(--spacing-component-padding-md);
+        background: var(--theme-bw-color-background-secondary);
+        border: 1px solid var(--theme-bw-color-border-primary);
+        border-radius: 8px;
+      }
+
+      .theme-switcher button {
+        margin: 0 0.25rem;
+        padding: var(--spacing-component-padding-sm);
+        cursor: pointer;
+        border: 1px solid var(--theme-bw-color-border-primary);
+        background: var(--theme-bw-color-background-primary);
+        color: var(--theme-bw-color-text-primary);
+        border-radius: 4px;
+      }
+
+      .theme-switcher button:hover {
+        background: var(--theme-bw-color-interactive-secondary);
+      }
+
+      .theme-switcher button.active {
+        background: var(--theme-bw-color-interactive-primary);
+        color: var(--theme-bw-color-text-inverse);
+      }
+
+      h1 {
+        font-family: var(--typography-fontFamily-display);
+        font-size: var(--typography-fontSize-4xl);
+        margin-bottom: var(--spacing-scale-6);
+      }
+
+      .card {
+        padding: var(--spacing-component-padding-lg);
+        background: var(--theme-bw-color-background-secondary);
+        border: 1px solid var(--theme-bw-color-border-primary);
+        border-radius: 8px;
+        margin-bottom: var(--spacing-component-gap-md);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <strong>Theme:</strong>
+      <button data-theme="bw" class="active">B&amp;W</button>
+      <button data-theme="color">Color</button>
+      <button data-theme="patina">Patina</button>
+    </div>
+
+    <div class="container">
+      <h1>VWX Design System Playground</h1>
+
+      <div class="card">
+        <h2>Welcome to the Playground</h2>
+        <p>
+          This is a development environment for testing VWX components.
+          Use the theme switcher in the top-right to preview different themes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Design Tokens Demo</h3>
+        <p style="font-size: var(--typography-fontSize-xs)">Extra Small Text</p>
+        <p style="font-size: var(--typography-fontSize-sm)">Small Text</p>
+        <p style="font-size: var(--typography-fontSize-base)">Base Text</p>
+        <p style="font-size: var(--typography-fontSize-lg)">Large Text</p>
+        <p style="font-size: var(--typography-fontSize-xl)">Extra Large Text</p>
+      </div>
+
+      <div class="card">
+        <h3>Spacing Demo</h3>
+        <div style="display: flex; gap: var(--spacing-component-gap-md);">
+          <div style="width: 50px; height: 50px; background: var(--theme-bw-color-interactive-primary);"></div>
+          <div style="width: 50px; height: 50px; background: var(--theme-bw-color-interactive-primary);"></div>
+          <div style="width: 50px; height: 50px; background: var(--theme-bw-color-interactive-primary);"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Next Steps</h3>
+        <p>Components will be added here by Agent 2 and Agent 3.</p>
+        <ul>
+          <li>Button component</li>
+          <li>Input component</li>
+          <li>Card component</li>
+          <li>Navigation component</li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="module">
+      // Theme switcher
+      const buttons = document.querySelectorAll('.theme-switcher button');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const theme = button.dataset.theme;
+          document.documentElement.setAttribute('data-theme', theme);
+
+          buttons.forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

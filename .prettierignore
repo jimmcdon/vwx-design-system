@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Package files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Storybook
+storybook-static/
+.storybook/
+
+# Test output
+backstop_data/
+
+# Auto-generated
+*.min.js
+*.min.css
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

@@ -1,0 +1,84 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Welcome" />
+
+# VW Xperience Design System
+
+Welcome to the **VW Xperience Design System** documentation! This design system provides a comprehensive collection of reusable components, design tokens, and guidelines for building automotive-inspired digital experiences.
+
+## Features
+
+- **Web Components**: Built with Lit for framework-agnostic compatibility
+- **Three Themes**: B&W, Color, and Patina aesthetic options
+- **Design Tokens**: Centralized design decisions using Style Dictionary
+- **TypeScript**: Full type safety across all packages
+- **Monorepo**: Efficient workspace management with pnpm
+
+## Getting Started
+
+### Installation
+
+```bash
+# Install the entire design system
+npm install @vwx/components @vwx/tokens @vwx/themes
+
+# Or with pnpm
+pnpm add @vwx/components @vwx/tokens @vwx/themes
+```
+
+### Basic Usage
+
+```html
+<!DOCTYPE html>
+<html data-theme="bw">
+<head>
+  <link rel="stylesheet" href="node_modules/@vwx/tokens/dist/css/variables.css">
+  <script type="module" src="node_modules/@vwx/components/dist/index.js"></script>
+</head>
+<body>
+  <!-- Components will be available here -->
+  <h1>VWX Design System</h1>
+</body>
+</html>
+```
+
+### Theme Switching
+
+Use the theme switcher in the toolbar above to preview components in different themes:
+
+- **Black & White**: Minimalist monochrome aesthetic
+- **Color**: VW brand colors with blue accents
+- **Patina**: Aged, warm aesthetic with rust and bronze tones
+
+## Architecture
+
+The design system is organized as a monorepo with the following packages:
+
+- `@vwx/tokens`: Design tokens (spacing, typography, colors)
+- `@vwx/components`: Web Components (atoms, molecules, organisms)
+- `@vwx/themes`: Theme implementations
+- `@vwx/utils`: Shared utilities
+
+## Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build design tokens
+pnpm build:tokens
+
+# Start Storybook
+pnpm storybook
+
+# Build all packages
+pnpm build
+```
+
+## Contributing
+
+Please read our [Contributing Guide](https://github.com/your-org/vwx-design-system/blob/main/CONTRIBUTING.md) for details on our code of conduct and development workflow.
+
+## License
+
+MIT License - see LICENSE file for details.
