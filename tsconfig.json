@@ -30,7 +30,6 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "allowImportingTsExtensions": true,
 
     // Emit
     "declaration": true,
