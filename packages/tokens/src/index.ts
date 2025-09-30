@@ -14,8 +14,20 @@
  * import { spacing, typography, colors } from '@vwx/tokens';
  */
 
-// Re-export design tokens (will be generated during build)
-export * from '../dist/js/base';
+// Export base tokens (types only, actual values loaded at runtime)
+export interface DesignTokens {
+  spacing: Record<string, string>;
+  typography: Record<string, any>;
+  colors: Record<string, string>;
+}
+
+// Re-export will be available after build
+try {
+  // @ts-ignore - This will exist after build
+  module.exports = { ...module.exports, ...require('../dist/js/base') };
+} catch {
+  // Build time - no dist folder yet
+}
 
 // Export theme names
 export const themes = ['bw', 'color', 'patina'] as const;
