@@ -1,0 +1,53 @@
+{
+  "name": "@vwx/ai-integration",
+  "version": "0.1.0",
+  "description": "VWX Design System AI Integration - BYOK provider system with cost tracking and intelligent routing",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "vite build --watch",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest watch",
+    "type-check": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "vwx",
+    "design-system",
+    "ai",
+    "byok",
+    "openrouter",
+    "openai",
+    "anthropic",
+    "google-ai",
+    "fal"
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.65.0",
+    "@fal-ai/client": "^1.6.2",
+    "@google/generative-ai": "^0.24.1",
+    "openai": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "typescript": "^5.2.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "vitest": "^1.0.0"
+  },
+  "author": "VWX Design System",
+  "license": "MIT"
+}
